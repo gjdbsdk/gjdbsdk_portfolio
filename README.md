@@ -80,5 +80,5 @@ Name: 허윤아 (Yuna Heo)
 Affiliation: 덕성여자대학교 디지털소프트웨어공학부 (24학번) | 덕성여대 멋쟁이사자처럼 14기 운영진
 
 GitHub: [@gjdbsdk](https://github.com/gjdbsdk) <br>
-Discord: [허윤아](https://discord.com810888409039765518) <br>
+Discord: [허윤아](https://discord.com/users/810888409039765518) <br>
 Gmail: aquahua0409@gmail.com
