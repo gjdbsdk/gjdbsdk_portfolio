@@ -27,6 +27,7 @@ export interface DesignWork {
   deliverables: string[];
   tags: string[];
   link?: string;
+  images?: string[];
 }
 
 export interface ManagementWork {
@@ -68,7 +69,10 @@ export const PROFILE = {
       description:
         "개인별 생체 주기 변화에 맞추어 신체 부담을 줄이고 회복 탄력성을 높여주는 맞춤형 홈트레이닝 루틴을 추천하는 헬스케어 웹 서비스",
       tags: ["HTML/CSS", "JavaScript", "Healthcare"],
-      award: "13기 여기톤 준결승 진출",
+      award: {
+        label: "진출",
+        detail: "13기 여기톤 준결승 진출",
+      },
       githubUrl: "https://github.com/2025-HERETHON/2025-herethon-21.git",
     },
     {
@@ -111,6 +115,7 @@ export const PROFILE = {
         "인터랙티브 캘린더 인터페이스와 지출 시각화 차트를 통해 일일 소비 루틴을 직관적으로 기록하고 관리할 수 있도록 설계한 핀테크 웹 서비스",
       tags: ["React", "TypeScript", "Interactive UI", "REST API"],
       githubUrl: "https://github.com/finhabit",
+      award: "덕멋 13기 데모데이 Lion Day 우승",
       liveUrl: "https://finhabit.vercel.app/",
     },
     {

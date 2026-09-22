@@ -18,6 +18,7 @@ import {
 import { PROFILE, MainTabType, CategoryType } from "@/data/profile";
 import InteractiveBackground from "@/components/InteractiveBackground";
 import SpotlightCard from "@/components/SpotlightCard";
+import Image from "next/image";
 
 function GithubIcon({ className = "w-4 h-4" }: { className?: string }) {
   return (
@@ -129,40 +130,41 @@ export default function Home() {
 
         <section id="tabs" className="space-y-10">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-[#1e2942] pb-6">
+            {/* MAIN TAB SWITCHER */}
             <div className="flex items-center gap-2 p-1.5 bg-[#0d1527] border border-[#1e2942] rounded-2xl w-fit">
               <button
                 onClick={() => setMainTab("Development")}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all ${
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap shrink-0 transition-all ${
                   mainTab === "Development"
                     ? "bg-[#ff6b4a] text-white shadow-lg shadow-[#ff6b4a]/25"
                     : "text-slate-400 hover:text-slate-200"
                 }`}
               >
-                <Layers className="w-4 h-4" />
+                <Layers className="w-4 h-4 shrink-0" />
                 <span>개발 (Development)</span>
               </button>
 
               <button
                 onClick={() => setMainTab("Design")}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all ${
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap shrink-0 transition-all ${
                   mainTab === "Design"
                     ? "bg-[#ff6b4a] text-white shadow-lg shadow-[#ff6b4a]/25"
                     : "text-slate-400 hover:text-slate-200"
                 }`}
               >
-                <Palette className="w-4 h-4" />
+                <Palette className="w-4 h-4 shrink-0" />
                 <span>디자인 (Design)</span>
               </button>
 
               <button
                 onClick={() => setMainTab("Management")}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all ${
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap shrink-0 transition-all ${
                   mainTab === "Management"
                     ? "bg-[#ff6b4a] text-white shadow-lg shadow-[#ff6b4a]/25"
                     : "text-slate-400 hover:text-slate-200"
                 }`}
               >
-                <Users className="w-4 h-4" />
+                <Users className="w-4 h-4 shrink-0" />
                 <span>운영 & 기획 (Management)</span>
               </button>
             </div>
@@ -323,6 +325,31 @@ export default function Home() {
                     <p className="text-slate-300 text-sm leading-relaxed">
                       {work.description}
                     </p>
+
+                    {work.images && work.images.length > 0 && (
+                      <div className="space-y-2">
+                        <span className="text-xs font-mono uppercase text-slate-400 tracking-wider">
+                          Visual Preview
+                        </span>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                          {work.images.map((src, index) => (
+                            <div
+                              key={index}
+                              className="relative aspect-video rounded-xl overflow-hidden border border-[#1e2942] bg-[#070b14] group/img"
+                            >
+                              <Image
+                                src={src}
+                                alt={`${work.title} 작업물 ${index + 1}`}
+                                fill
+                                className="object-cover transition-transform duration-300 group-hover/img:scale-105"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-[#070b14]/70 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity" />
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
 
                     <div className="space-y-2">
                       <span className="text-xs font-mono uppercase text-slate-400 tracking-wider">
