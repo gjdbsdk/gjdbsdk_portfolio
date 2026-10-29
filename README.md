@@ -65,20 +65,6 @@ src/
 ```
 ---
 
-## 🚀 Getting Started
-```
-# 1. 저장소 클론
-git clone [https://github.com/gjdbsdk/gjdbsdk_portfolio.git](https://github.com/gjdbsdk/gjdbsdk_portfolio.git)
-cd gjdbsdk_portfolio
-
-# 2. 의존성 패키지 설치
-npm install
-
-# 3. 로컬 개발 서버 실행
-npm run dev
-```
----
-
 ## 📬 Contact
 
 Name: 허윤아 (Yuna Heo)
